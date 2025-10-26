@@ -8,8 +8,8 @@ public class ResultDTO {
     public List<PerGraph> results = new ArrayList<>();
 
     public static class PerGraph {
-        public int id; // всегда заполнен
-        public String name; // может быть null
+        public int id; 
+        public String name; 
         public int vertices;
         public int edges;
         public Algo prim;
@@ -20,11 +20,11 @@ public class ResultDTO {
 
 
     public static class Algo {
-        public long mstCost; // Long.MAX_VALUE если несвязный
+        public long mstCost; 
         public List<EdgeTriple> mstEdges = new ArrayList<>();
-        public long timeMs; // миллисекунды
-        public Ops ops = new Ops(); // счётчики операций
-        public long opCount() { // агрегированная метрика для CSV
+        public long timeMs; 
+        public Ops ops = new Ops(); 
+        public long opCount() { 
             return ops.pqPushes + ops.pqPops + ops.edgeConsidered + ops.edgeChecks + ops.unions + ops.finds;
         }
     }
@@ -34,11 +34,11 @@ public class ResultDTO {
 
 
     public static class Ops {
-        public long pqPushes; // Prim
-        public long pqPops; // Prim
-        public long edgeConsidered; // Prim
-        public long edgeChecks; // Kruskal
-        public long unions; // Kruskal
+        public long pqPushes; 
+        public long pqPops; 
+        public long edgeConsidered;
+        public long edgeChecks;
+        public long unions; 
         public long finds;
     }
 }
