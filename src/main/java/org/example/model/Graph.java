@@ -25,7 +25,7 @@ public class Graph {
         List<Edge> norm = new ArrayList<>(minWeightByPair.size());
         for (Map.Entry<Long, Integer> en : minWeightByPair.entrySet()) {
             int a = (int) (en.getKey() >> 32);
-            int b = (int) (long) (en.getKey() & 0xffffffffL);
+            int b = (int) (en.getKey() & 0xffffffffL);
             norm.add(new Edge(a, b, en.getValue()));
         }
         this.edges = List.copyOf(norm);
