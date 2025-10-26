@@ -24,7 +24,6 @@ public class Edge implements Comparable<Edge> {
         if (!(other instanceof Edge)) return false;
         Edge e  = (Edge) other;
 
-        //some connection regardles of direction
         return ((u == e.u && v == e.v) || (u == e.v && v == e.u)) &&  w == e.w;
     }
 
